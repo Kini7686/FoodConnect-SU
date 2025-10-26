@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+# FoodConnectSU (React + Firebase + TFJS)
+## Quickstart
+1. `npm install`
+2. Create `.env.local` with your Firebase keys:
+   ```
+   VITE_FIREBASE_KEY=...
+   VITE_FIREBASE_DOMAIN=...
+   VITE_FIREBASE_PROJECT=...
+   VITE_FIREBASE_BUCKET=...
+   VITE_FIREBASE_SENDER=...
+   VITE_FIREBASE_APPID=...
+   ```
+3. `npm run dev`
+4. Optional: place TFJS Food-101 model under `public/models/food101/` as `model.json` and shards.
+   Fallback to MobileNet works automatically if missing.
+=======
+# FoodConnectSU
+>>>>>>> 3f297ce86fab91328b451d558adfb53344190697
