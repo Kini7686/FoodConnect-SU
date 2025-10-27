@@ -174,14 +174,7 @@ firebase deploy --only functions
 
 ---
 
-## 👨‍💻 Contributors
 
-| Name | Role |
-|------|------|
-| Utkarsh Mishra | Full Stack Developer |
-| Team Members | UI, Testing, Deployment |
-
----
 
 ## 📝 License
 
