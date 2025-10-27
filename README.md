@@ -117,6 +117,14 @@ export const firebaseConfig = {
 Create a `.env` file next to `server.js`:
 ```env
 BREVO_API_KEY=your-key-here
+VITE_FIREBASE_KEY=your-key-here
+VITE_FIREBASE_DOMAIN=foodconnectsu.firebaseapp.com
+VITE_FIREBASE_PROJECT=foodconnectsu
+VITE_FIREBASE_BUCKET=foodconnectsu.appspot.com
+VITE_FIREBASE_SENDER=your-key-here
+VITE_FIREBASE_APPID=your-key-here
+VITE_RESEND_API_KEY=your-key-here
+BREVO_API_KEY=your-key-here
 ```
 
 Start the proxy:
