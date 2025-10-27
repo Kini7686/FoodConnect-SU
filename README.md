@@ -1,92 +1,94 @@
 # 🍱 FoodConnectSU  
 ### Connecting Surplus Food With Students in Need  
-_A Real-Time Campus Food Sharing Platform_
+_A real-time campus food sharing platform_
 
 ---
 
 ## 📌 Overview
 
-FoodConnectSU is an initiative to reduce food waste across **Syracuse University** by connecting available surplus food to students in real time.
+FoodConnectSU helps reduce **food waste** across **Syracuse University** by connecting surplus food to students in real time.
 
-Users can:
-- Upload surplus food posts
-- Auto-detect food type using AI
-- Receive nutrition info instantly
-- Get notified via email when new food is posted
+Students can:
+- Post surplus food instantly
+- Auto-detect food items using AI
+- View nutrition info automatically
+- Receive alerts when new food is available
 - Claim food before it expires
 
-Mission: **Feed students, not landfills** 🌎💚
+Mission: **Feed students, not landfills.** 🌎💚
 
 ---
 
 ## 🚀 Features
 
-- ✅ Google Login (Firebase Auth)
-- ✅ AI food detection using TensorFlow.js
-- ✅ Automated nutrition value mapping
-- ✅ Real-time food availability & expiry countdown
-- ✅ Firestore live sync (auto-refresh UI)
-- ✅ Email alerts to all registered users (Brevo)
-- ✅ Location picker with labeled drop points
+- ✅ Google Login (Firebase Authentication)
+- ✅ AI food recognition (TensorFlow.js)
+- ✅ Nutritional info auto-mapping
+- ✅ Live food availability + expiry countdown
+- ✅ Realtime Firestore database sync
+- ✅ Brevo email notifications
+- ✅ Location dropdown for campus pickup points
 
 ---
 
 ## 🧩 Tech Stack
 
-| Layer | Technology |
-|------|------------|
+| Category | Technology |
+|---------|------------|
 | Frontend | React + Vite + TailwindCSS |
-| Backend | Firebase Cloud Functions + Express |
+| Backend | Firebase Cloud Functions + Express.js |
 | Database | Firebase Firestore |
 | Email | Brevo SMTP via secure local proxy |
 | AI Model | TensorFlow.js Image Classification |
-| Auth | Firebase Google Authentication |
+| Authentication | Firebase Google Auth |
 | Hosting | Firebase Hosting |
 
 ---
 
-## 🏛 System Architecture
+## 🏛 Architecture Overview
 
+```
 ┌──────────┐
-│ Users │
-└──────┬───┘
-│
-┌──────▼──────┐
-│ React App │
-└──────┬──────┘
-│
-┌──────▼──────────┐
+│  Users   │
+└─────┬────┘
+      │
+┌─────▼──────┐
+│ React App  │
+└─────┬──────┘
+      │
+┌─────▼──────────┐
 │ Firebase Cloud │
-│ Firestore + Func│
-└──────┬──────────┘
-│
-┌──────▼──────────┐
-│ Brevo Email API │
-└─────────────────┘
-
+│ Firestore + CF │
+└─────┬──────────┘
+      │
+┌─────▼────────┐
+│ Brevo Email  │
+└──────────────┘
+```
 
 ---
 
 ## 📂 Project Structure
 
+```
 FoodConnectSU/
 │── src/
-│ ├── components/
-│ ├── pages/
-│ ├── utils/
-│ ├── services/
-│ └── App.jsx
-│── functions/ (Cloud Functions backend)
-│── server.js (Local email proxy)
-│── README.md
+│   ├── components/
+│   ├── pages/
+│   ├── utils/
+│   ├── services/
+│   └── App.jsx
+│── functions/        # Firebase Cloud Functions
+│── server.js         # Brevo Email Proxy Server
 │── package.json
-
+│── README.md
+```
 
 ---
 
-## ⚙️ Installation Guide
+## ⚙️ Setup Instructions
 
-### 1️⃣ Clone repository
+### 1️⃣ Clone the repo
 ```sh
 git clone https://github.com/Kini7686/FoodConnectSU.git
 cd FoodConnectSU
@@ -98,12 +100,9 @@ npm install
 cd functions && npm install
 ```
 
-3️⃣ Firebase Config Setup
-
-Inside src/services/firebase.js, add your credentials:
-
-```sh
-
+### 3️⃣ Add Firebase config  
+Create or update: `src/services/firebase.js`
+```js
 export const firebaseConfig = {
   apiKey: "",
   authDomain: "",
@@ -114,27 +113,32 @@ export const firebaseConfig = {
 };
 ```
 
-4️⃣ Brevo Email Proxy Setup
-
-```sh
-
-Create .env file:
-
+### 4️⃣ Configure Email Proxy  
+Create a `.env` file next to `server.js`:
+```env
 BREVO_API_KEY=your-key-here
-
 ```
-Start server:
 
+Start the proxy:
+```sh
 node server.js
+```
 
-5️⃣ Start Development Environment
+### 5️⃣ Start Dev Server
+```sh
 npm run dev
+```
 
-6️⃣ Deploy Cloud Functions (optional)
+### 6️⃣ Deploy Cloud Functions (optional)
+```sh
 firebase deploy --only functions
+```
 
-🔐 Firestore Data Structure
-foodPosts Collection Example
+---
+
+## 🔐 Firestore Data Structure (Example)
+
+```json
 {
   "title": "Pizza",
   "quantity": 6,
@@ -154,17 +158,32 @@ foodPosts Collection Example
   "createdAt": "Timestamp",
   "expiryTime": "Timestamp",
   "status": "available"
-}✨ Future Enhancements
-Feature	Status
-Push notifications	🔜
-Student dietary preference filtering	🔜
-Admin dining management panel	🔜
-Rewards for posting food	🚀 planned
-👨‍💻 Contributors
-Name	Role
-Utkarsh Mishra	Full Stack Developer
-Team Members	UI, Testing, Deployment
-📝 License
+}
+```
 
-This project is developed for educational use at Syracuse University.
-No commercial usage allowed without permission.
+---
+
+## ✨ Future Enhancements
+
+| Feature | Status |
+|---------|--------|
+| Push notifications | 🔜 |
+| Dietary preference filtering | 🔜 |
+| Dining hall admin panel | 🔜 |
+| Reward system for food donors | 🚀 Planned |
+
+---
+
+## 👨‍💻 Contributors
+
+| Name | Role |
+|------|------|
+| Utkarsh Mishra | Full Stack Developer |
+| Team Members | UI, Testing, Deployment |
+
+---
+
+## 📝 License
+
+This project is built for academic and social benefit at Syracuse University.  
+Commercial use requires prior written permission.
